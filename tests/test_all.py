@@ -2,6 +2,13 @@ import pytest
 import glob
 from project1 import p1
 from nltk import word_tokenize
+import collections
+try:
+    from collections.abc import Callable  # noqa
+except ImportError:
+    from collections import Callable  # noqa
+
+
 
 
 def test_names():

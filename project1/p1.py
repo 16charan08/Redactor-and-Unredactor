@@ -9,6 +9,8 @@ else:
 nltk.download('averaged_perceptron_tagger')
 nltk.download('maxent_ne_chunker')
 nltk.download('words')
+nltk.download('punkt')
+nltk.download('wordnet')
 import glob
 from nltk import ne_chunk
 from nltk.corpus import stopwords
@@ -282,7 +284,7 @@ def stats(data):
     return dict
 
 def extractstat(dict):
-    file1 = open('../stderr/stderr.txt', 'w', encoding='utf-8')
+    file1 = open('./stderr/stderr.txt', 'w', encoding='utf-8')
     # print(dict)
     for k, v in dict.items():
         file1.write(str(k) + ' >>> ' + str(v) + '\n')
