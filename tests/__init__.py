@@ -1,0 +1,1 @@
+from project1.p1 import *
