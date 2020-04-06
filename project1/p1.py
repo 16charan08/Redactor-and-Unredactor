@@ -295,25 +295,19 @@ def extractstat(dict):
 
 def output(files, data, name):
     allfiles = []
-    z = []
     for i in files:
         for file in i:
             allfiles.append(glob.glob(file))
-    #print(allfiles)
-    z = nltk.flatten(allfiles)
-    #print(z)
-    newpath = os.path.join(os.getcwd(), name)
-    #print(newpath)
-    for j in range(len(z)):
-        path = os.path.splitext(z[j])[0]
-        #print(path)
-        path = os.path.basename(path) + '.redacted'
-        #print(path)
-        if not os.path.exists(newpath):
-            os.makedirs(newpath)
-            with open(os.path.join(newpath, path), 'w') as temp_file:
-                temp_file.write(data[j])
-        elif os.path.exists(newpath):
-            with open(os.path.join(newpath, path), 'w') as temp_file:
-                temp_file.write(data[j])
+    flattenf = nltk.flatten(allfiles)
+    newfilepath = os.path.join(os.getcwd(), name)
+    for j in range(len(flattenf)):
+        getpath = os.path.splitext(flattenf[j])[0]
+        getpath = os.path.basename(getpath) + '.redacted'
+        if not os.path.exists(newfilepath):
+            os.makedirs(newfilepath)
+            with open(os.path.join(newfilepath, getpath), 'w') as temp:
+                temp.write(data[j])
+        elif os.path.exists(newfilepath):
+            with open(os.path.join(newfilepath, getpath), 'w') as temp:
+                temp.write(data[j])
 
