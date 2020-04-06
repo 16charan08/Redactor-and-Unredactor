@@ -2,4 +2,3 @@ names_masked_in_each_file >>> [15, 25, 5]
 dates_masked_in_each_file >>> [0, 6, 0]
 genders_masked_in_each_file >>> [43, 32, 0]
 phonenumber_masked_in_each_file >>> [0, 3, 0]
-
