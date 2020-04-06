@@ -1,6 +1,5 @@
 import nltk
 import ssl
-import numpy
 try:
     _create_unverified_https_context = ssl._create_unverified_context
 except AttributeError:
@@ -106,21 +105,26 @@ def dates(data):
 def concept(data, word):
     synonyms = []
     synonyms_list = []
-    for syn in wordnet.synsets(word):
-        synonyms.append(syn.lemma_names())
-        for l in syn.hyponyms():
-            #print(l)
-            x=l.lemma_names()
-            #print(x)
-            synonyms_list.append(x)
-    All = []
-    All.append(word)
+    #print(word)
+    for w in word:
+        #print(w)
+        for syn in wordnet.synsets(w):
+            #print(syn)
+            synonyms.append(syn.lemma_names())
+            for l in syn.hyponyms():
+                #print(l)
+                x=l.lemma_names()
+                #print(x)
+                synonyms_list.append(x)
+        #print(synonyms_list)
+    All = word
+    #All.append(word)
     for item in synonyms_list:
         for i in item:
             All.append(i)
     #print(synonyms_list[3])
     #print(synonyms)
-    #print(All)
+    print(All)
     masked_concepts = []
     count = 0
     ccount = []
