@@ -9,7 +9,6 @@ else:
 nltk.download('averaged_perceptron_tagger')
 nltk.download('maxent_ne_chunker')
 nltk.download('words')
-nltk.download('punkt')
 nltk.download('wordnet')
 import glob
 from nltk import ne_chunk
@@ -158,24 +157,22 @@ def gender(data):
     #print(gender_C)
     masked_genders = []
     for file in data:
-        merge_sentences = []
-        for sentence in sent_tokenize(file):
-            m_sentence = []
-            words_sentence = word_tokenize(sentence)
+        m = []
+        for s in sent_tokenize(file):
+            m_s = []
+            words_sentence = word_tokenize(s)
             for item in words_sentence:
                 #print(item.lower())
                 if (item.lower() in gender or item in gender_C):
-                    m_sentence.append('\u2588')
+                    m_s.append('\u2588')
                 else:
-                    m_sentence.append(item)
-            #print(m_sentence)
-            newsentence = ' '.join([str(x) for x in m_sentence])
-            #print(newsentence)
-            merge_sentences.append(newsentence)
-            #print(merge_sentences)
-        newfile = ' '.join([str(x) for x in merge_sentences])
-        #print(newfile)
-        masked_genders.append(newfile)
+                    m_s.append(item)
+            #print(m_s)
+            formedsentence = ' '.join([str(x) for x in m_s])
+            m.append(formedsentence)
+            #print(m)
+        formedfile = ' '.join([str(x) for x in m])
+        masked_genders.append(formedfile)
     #print(masked_genders)
     return(masked_genders)
 
@@ -284,7 +281,7 @@ def stats(data):
     return dict
 
 def extractstat(dict):
-    file1 = open('./stderr/stderr.txt', 'w', encoding='utf-8')
+    file1 = open('../stderr/stderr.txt', 'w', encoding='utf-8')
     # print(dict)
     for k, v in dict.items():
         file1.write(str(k) + ' >>> ' + str(v) + '\n')
