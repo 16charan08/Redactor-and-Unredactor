@@ -87,7 +87,6 @@ def test_date():
     #print(all)
     assert all is not None
 
-
 def test_concept():
     Read_data = []
     all = []
@@ -97,7 +96,7 @@ def test_concept():
     for i in data:
         Read_data.append(open(i).read())
    # print(Read_data)
-    masked_concept = p1.concept(Read_data,'University')
+    masked_concept = p1.concept(Read_data,['attention','uneasy'])
     #print(masked_concept)
 
     for i in masked_concept:
@@ -112,6 +111,7 @@ def test_concept():
                 all.append(j)
     #print(all)
     assert all is not None
+
 
 def test_gender():
     Read_data = []
