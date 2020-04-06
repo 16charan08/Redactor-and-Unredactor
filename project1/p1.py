@@ -1,5 +1,6 @@
 import nltk
 import ssl
+import numpy
 try:
     _create_unverified_https_context = ssl._create_unverified_context
 except AttributeError:
@@ -281,7 +282,7 @@ def stats(data):
     return dict
 
 def extractstat(dict):
-    file1 = open('../stderr/stderr.txt', 'w', encoding='utf-8')
+    file1 = open('./stderr/stderr.txt', 'w', encoding='utf-8')
     # print(dict)
     for k, v in dict.items():
         file1.write(str(k) + ' >>> ' + str(v) + '\n')
