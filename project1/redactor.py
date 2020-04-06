@@ -10,7 +10,7 @@ if __name__ == '__main__':
     parser.add_argument("--genders", required=False, help="Removes genders and gender references", action='store_true')
     parser.add_argument("--phones", required=False, help="Removes phone numbers", action='store_true')
     parser.add_argument("--stats", type=str, required=False, help="Gives statistics for redacted files")
-    parser.add_argument("--concept", type=str, required=False, help="Concept word removal")
+    parser.add_argument("--concept", type=str, required=False, help="Concept word removal", action='append')
     parser.add_argument("--output", type=str, required=True, help="Output File location")
 
     args = parser.parse_args()
