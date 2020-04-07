@@ -14,20 +14,20 @@ if __name__ == '__main__':
     parser.add_argument("--output", type=str, required=True, help="Output File location")
 
     args = parser.parse_args()
-    a = p1.input(args.input)
+    data = p1.input(args.input)
 
     if(args.names):
-        a = p1.names(a)
+        data = p1.names(data)
     if(args.genders):
-        a = p1.gender(a)
+        data = p1.gender(data)
     if(args.dates):
-        a = p1.dates(a)
+        data = p1.dates(data)
     if(args.phones):
-        a = p1.phonenumber(a)
+        data = p1.phonenumber(data)
     if(args.concept):
-        a = p1.concept(a,args.concept)
+        data = p1.concept(data,args.concept)
     #print(a)
-    p1.output(args.input,a,args.output)
+    p1.output(args.input,data,args.output)
     x = p1.input(args.input)
     if(args.stats):
        statsdict = p1.stats(x)
