@@ -98,7 +98,6 @@ def concept(data, word):
     for item in synonyms_list:
         for i in item:
             All.append(i)
-    print(All)
     masked_concepts = []
     count = 0
     ccount = []
