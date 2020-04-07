@@ -220,27 +220,58 @@ This function test *names(data)* from p1.py .As two files named *testsample.txt 
             if j == x: \
                 all.append(j) \
     assert all is not None
-    
+ 
+So if names are masked test case passes.
 - **test_phone** \
-This function test *phonenumber(data)* from p1.py .As two files named *testsample.txt and test_README.md* are created in local folder ,in this function it will be tested if in these folders phonenumbers are masked or not(by checking the list length of masked phonenumbers). 
+This function test *phonenumber(data)* from p1.py .As two files named *testsample.txt and test_README.md* are created in local folder ,in this function it will be tested if in these folders phonenumbers are masked or not(by checking the list length of masked phonenumbers). \
+So if phonenumber are masked test case passes.
 
 - **test_date** \
-This function test *dates(data)* from p1.py .As two files named *testsample.txt and test_README.md* are created in local folder ,in this function it will be tested if in these folders dates are masked or not(by checking the list length of masked dates). 
+This function test *dates(data)* from p1.py .As two files named *testsample.txt and test_README.md* are created in local folder ,in this function it will be tested if in these folders dates are masked or not(by checking the list length of masked dates). \
+So if dates are masked test case passes.
+
 
 - **test_concept** \
 **_Assumption made in this test cases: -_** only two words are given to mask sentences(['attention','uneasy']) \
-This function test *concept(data,word)* from p1.py .As two files named *testsample.txt and test_README.md* are created in local folder ,in this function it will be tested if in these folders concepts(list of words) are masked or not(by checking the list length of masked concepts).
+This function test *concept(data,word)* from p1.py .As two files named *testsample.txt and test_README.md* are created in local folder ,in this function it will be tested if in these folders concepts(list of words) are masked or not(by checking the list length of masked concepts).\
+So if concept sentences are masked test case passes.
+
 
 - **test_gender** \
-This function test *gender(data)* from p1.py .As two files named *testsample.txt and test_README.md* are created in local folder ,in this function it will be tested if in these folders genders are masked or not(by checking the list length of masked genders).
+This function test *gender(data)* from p1.py .As two files named *testsample.txt and test_README.md* are created in local folder ,in this function it will be tested if in these folders genders are masked or not(by checking the list length of masked genders).\
+So if genders sentences are masked test case passes.
+
 
 - **test_stats** \
-This function test *stats(data)* from p1.py .As two files named *testsample.txt and test_README.md* are created in local folder ,in this function it will be tested if returned dictonary from stats(data) is empty of not.
+This function test *stats(data)* from p1.py .As two files named *testsample.txt and test_README.md* are created in local folder ,in this function it will be tested if returned dictonary from stats(data) is empty of not.\
+So if dictonary is not empty test case passes.
+
 
 - **test_output** \
 **_Assumption made in this test cases: -_** Expected to execute project first to create ".redacted" files. 
-This function test *output(files,data,name)* from p1.py .This funtion tests if files with extention ".redacted" are present in output folder or not.
+This function test *output(files,data,name)* from p1.py .This funtion tests if files with extention ".redacted" are present in output folder or not.\
+So if .redacted files present test case passes.
 
 
+### Execution
+
+- To get project folder:- 
+> Run install pipenv
+
+> git clone https://github.com/16charan08/cs5293p20-project1.git
+
+- For results:- 
+run below command in command line.
+
+>*pipenv run python  project1/redactor.py --input "./files/*.txt" --input "./otherfiles/*.md" --names --dates --genders --phones --stats
+ stderr  --concept "Extremely" --concept "marianne" --concept "Manners" --concept "imprudence"  --output "./output" * 
+ ##### Assumption: -  output flag order must be maintained while running above command(It should be specified at last to get all masked in order). Other flags can be in any order or only few can be also given while running. 
+
+- For test Cases:- 
+ run below command in command line.
+ 
+>*pytest*
+
+This will fetch will all test cases are passed or not.
 
 
