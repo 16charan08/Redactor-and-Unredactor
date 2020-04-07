@@ -56,7 +56,8 @@ This method takes one argument that is passed from argument parser that is files
               for i in y: \
         Read_data.append(open(i).read())
 
-Finally in Read_data we will have a list of data of each file.
+Finally in Read_data we will have a list of data of each file.\
+Input file text reference: - https://randomtextgenerator.com/
 
 
 - **names(data)** \
