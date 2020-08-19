@@ -1,4 +1,4 @@
-# cs5293p20-project1
+# Redactor-and-Unredactor
 In this project a text file(randomly selected from google and enriched with some information to meet my code specifications) is selected and senstive information like "names,dates,phone,genders etc" are redacted(masked so that its not visible in general). All this information is stored in output files with (.redacted) extention.
 ### Author :- Ram charan Reddy Kankanala
 ### Email :- Ramcharankankanala@gmail.com
