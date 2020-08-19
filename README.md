@@ -259,8 +259,7 @@ So if .redacted files present test case passes.
 - To get project folder:- 
 > Run install pipenv
 
-> git clone https://github.com/16charan08/cs5293p20-project1.git
-
+> git clone https://github.com/16charan08/Redactor-and-Unredactor.git
 - For results:- 
 run below command in command line.
 
